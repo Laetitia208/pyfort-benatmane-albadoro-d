@@ -10,4 +10,4 @@ def bonneteau():
         BonneLettre = choice(Liste)
         print("Il vous reste :",i+1,"tentatives !")
         print("Saississez un bonneteau entre le A, le B et le C : ")
-        Choix =
+        Choix = str(input())
