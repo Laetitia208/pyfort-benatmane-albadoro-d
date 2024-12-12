@@ -85,8 +85,12 @@ def epreuve_roulette_mathematique():
         return False
 
 def epreuve_math():
-    epreuves = ()
+    epreuves = (epreuve_math_factorielle, epreuve_math_premier, epreuve_roulette_mathematique)
+    epreuve = random.choice(epreuves)
+    epreuve()
+    return epreuve
 
+print(epreuve_math())
 
 
 
