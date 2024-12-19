@@ -93,7 +93,7 @@ def epreuve_math():
     epreuve()
     return epreuve
 
-print(epreuve_math())
+epreuve_math()
 
 
 
