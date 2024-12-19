@@ -90,10 +90,10 @@ def epreuve_roulette_mathematique():                                  #Ce progra
 def epreuve_math():
     epreuves = (epreuve_math_factorielle, epreuve_math_premier, epreuve_roulette_mathematique)
     epreuve = random.choice(epreuves)
-    epreuve()
     return epreuve
 
-epreuve_math()
+jeu = epreuve_math()
+jeu()
 
 
 
