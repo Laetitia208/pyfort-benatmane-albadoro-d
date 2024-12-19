@@ -25,3 +25,41 @@ def bonneteau():
             print("Le choix n'est pas valide")
     print("Vous avez perdu ! \nLa clé se trouvait sous le bonneteau :",BonneLettre)
     return False
+
+def jeu_lance_des():
+    print("Bienvenue sur le jeu des lancés de dés !\nLe maître du jeu et vous devez lancer deux dés, le premier qui obtient un 6 gagne, cependant vous avez 3 essais.")
+    nombre_essai = 3 #On initalise le nombre d'essai restant à 3
+    while nombre_essai > 0: #On répète tant qu'il reste des essais
+        print("Il vous reste :",nombre_essai,"essais !")
+        input("Pour lancer les dés, veuillez appuyer sur la touche **Entrée** !")
+        a = randint(1,6) #la variable "a" va prendre une valeur entre 1 et 6 de façon aléatoire
+        b = randint(1,6) #la variable "b" va prendre une valeur entre 1 et 6 de façon aléatoire
+        des_joueur = (a,b) #on remplit le tuple des_joueur avec les valeurs de "a" et "b"
+        print("Vous avez obtenus les valeurs : ",des_joueur)
+        if des_joueur[0] == 6 or des_joueur[1] == 6: #On vérifie si il y a un 6 dans le tuple des_joueur
+            print("Vous avez gagné ! \nVous remportez la clé !")
+            return True
+        else:
+            print("C'est au tour du maître du jeu !")
+        c = randint(1,6) #la variable "c" va prendre une valeur entre 1 et 6 de façon aléatoire
+        d = randint(1,6) #la variable "d" va prendre une valeur entre 1 et 6 de façon aléatoire
+        des_maitre = (c,d)
+        print("Les résultats des dés obtenus par le maître du jeu sont : ",des_maitre)
+        if des_maitre[0] == 6 or des_maitre[1] == 6: #On vérifie si il y a un 6 dans le tuple des_maitre
+            print("Vous avez perdu !\nLe maître du jeu a gagné")
+            return False
+        else:
+            if nombre_essai > 1: #Si il reste un essai alors on annonce qu'il y a une nouvelle tentative après sinon on annonce que c'est la fin du jeu
+                print("Aucun 6 n'a été obtenu, on passe au prochain essai")
+            else:
+                print("Personne n'a eu de 6 sur les 3 essais, c'est un match nul !")
+                return False
+        nombre_essai = nombre_essai - 1 #On enlève un essai au nombre d'essai restant
+
+def epreuve_hasard():
+    epreuves = (bonneteau,jeu_lance_des) #on crée un tuple contenant les fonctions des deux jeux
+    epreuve = choice(epreuves) #la variable epreuve va prendre aléatoirement un des jeux
+    return epreuve
+
+jeu=epreuve_hasard()
+jeu()
