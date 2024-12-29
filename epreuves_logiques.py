@@ -7,7 +7,7 @@ def suiv(indice):                                #Cette fonction indique le num�
         return 0
 
 def grille_vide():                               #Cette fonction crée un tableau 2D 3x3 remplie avec des espaces " "
-    grille = 3*[3*[" "]]
+    grille = [[" "," "," "],[" "," "," "],[" "," "," "]]
     return grille
 
 def affiche_grille(grille,message):              #Cette fonction affiche un message et un tableau 2D ligne par ligne
@@ -53,8 +53,6 @@ def init():
                 print(position)
                 libre = True
     return affiche_grille(grille,"Rappel de l'historique des tirs que vous avez effectués :")
-
-
 
 
 
