@@ -55,7 +55,7 @@ def epreuve_math_premier():
         print("Dommage, mauvaise réponse.")
         return False
 
-def epreuve_roulette_mathematique():                                  #Ce programme génère un calcul aléatoire et demande au joueur de toruver le résultat
+def epreuve_roulette_mathematique():                                  #Cette fonction génère un calcul aléatoire et demande au joueur de toruver le résultat
     nb1 = random.randint(1, 20)
     nb2 = random.randint(1, 20)
     nb3 = random.randint(1, 20)
