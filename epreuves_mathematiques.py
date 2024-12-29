@@ -13,7 +13,7 @@ import random
 def epreuve_math_factorielle():                                       #Ce programme est une épreuve pour trouver la factorielle d'un nombre entre 1 et 10
     n = random.randint(1, 10)
     print("Epreuve de Mathématiques : calculer la factorielle de", n)
-    joueur = int(input())                                             #Le joueur entre sa réponse
+    joueur = int(input())                                             #Le joueur saisi sa réponse
     print("Votre réponse :", joueur)
     reponse = factorielle(n)                                          #Le programme utilise la fonction factorielle(n) pour calculer n!
     if reponse == joueur :
