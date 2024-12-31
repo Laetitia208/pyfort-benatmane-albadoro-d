@@ -20,10 +20,12 @@ def affiche_grille(grille,message):              #Cette fonction affiche un mess
         print(nvl_ligne)                         #Et ensuite les afficher
     print(" -------------")
 
+import re
+
 def demande_position():
     print("Saisissez une position (ligne,colonne) entre 1 et 3 :")
     pos = str(input())
-    nombres = pos.split(",")
+    nombres = re.findall(r'\d+', pos)
     entiers = [int(nombre) for nombre in nombres]       #Faut peut-être changer ça car ca marche pas avec des str
     correct = False
     while correct == False:
@@ -35,12 +37,12 @@ def demande_position():
             else:
                 print("Saisissez une position (ligne,colonne) entre 1 et 3 :")
                 pos = str(input())
-                nombres = pos.split(",")
+                nombres = re.findall(r'\d+', pos)
                 entiers = [int(nombre) for nombre in nombres]
         else:
             print("Saisissez une position (ligne,colonne) entre 1 et 3 :")
             pos = str(input())
-            nombres = pos.split(",")
+            nombres = re.findall(r'\d+', pos)
             entiers = [int(nombre) for nombre in nombres]
 
 def init():
@@ -57,29 +59,43 @@ def init():
     return grille
 
 import random
+import time
 
 def tour(joueur, grille_tirs_joueur, grille_adversaire):
     if joueur == 1 :
+        time.sleep(1.5)
         print("C'est le tour du maître du jeu :")
         l = random.randint(1,3)
         c = random.randint(1,3)
+        time.sleep(1.5)
         print("Le maître du jeu tire en position",l,",",c)
+        if grille_adversaire[l - 1][c - 1] == "-":
+            print("Le maître du jeu a touché le même bateau")
         if grille_adversaire[l-1][c-1] == " ":
             grille_tirs_joueur[l-1][c-1] = "."
+            time.sleep(1)
             print("Dans l'eau...")
         if grille_adversaire[l-1][c-1] == "B":
             grille_tirs_joueur[l-1][c-1] = "x"
+            grille_adversaire[l-1][c-1] = "-"
+            time.sleep(1)
             print("Touché coulé !")
     if joueur == 0 :
+        time.sleep(1.5)
         print("C'est à votre tour de faire feu ! :")
+        time.sleep(1.5)
         print("Rappel de l'historique des tirs que vous avez effectués :")
         affiche_grille(grille_tirs_joueur,"")
         pos = demande_position()
+        if grille_adversaire[pos[0]-1][pos[1]-1] == "-":
+            print("Oups, vous avez encore touché ce bateau...")
         if grille_adversaire[pos[0]-1][pos[1]-1] == " ":
             grille_tirs_joueur[pos[0]-1][pos[1]-1] = "."
             print("Dans l'eau...")
         if grille_adversaire[pos[0]-1][pos[1]-1] == "B":
             grille_tirs_joueur[pos[0]-1][pos[1]-1] = "x"
+            grille_adversaire[pos[0]-1][pos[1]-1] = "-"
+            time.sleep(1)
             print("Touché coulé !")
 
 def gagne(grille_tirs_joueur):
