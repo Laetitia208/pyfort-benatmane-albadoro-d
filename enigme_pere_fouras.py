@@ -1,20 +1,18 @@
 import json
 
-def charger_enigmes(fichier):
-    with open(fichier,'r',encoding='utf-8') as f:
+def charger_enigmes():
+    with open('./data/enigmesPF.json','r',encoding='utf-8') as f:
         enigmes = json.load(f)
     d = {}
     for enigme in enigmes:
         d[enigme['question']] = enigme['reponse']
     return d
 
-print(charger_enigmes('./data/enigmesPF.json'))
-
 import random
 
 def enigme_pere_fouras():
     nb_essais = 3
-    liste_enigmes = (charger_enigmes('./data/enigmesPF.json'))
+    liste_enigmes = (charger_enigmes())
     enigme_choisie,rep = random.choice(list(liste_enigmes.items()))
     print(enigme_choisie)
     while nb_essais > 0:
