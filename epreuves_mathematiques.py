@@ -92,8 +92,8 @@ def epreuve_math():
     epreuve = random.choice(epreuves)
     return epreuve
 
-jeu = epreuve_math()
-jeu()
+"""jeu = epreuve_math()
+jeu()"""
 
 
 

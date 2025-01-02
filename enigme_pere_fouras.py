@@ -33,4 +33,4 @@ def enigme_pere_fouras():
                 print("Dommage, vous avez échoué à cette épreuve. La réponse était :",rep)
                 return False
 
-enigme_pere_fouras()
+"""enigme_pere_fouras()"""

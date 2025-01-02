@@ -39,4 +39,4 @@ def salle_De_Tresor():
             if essais == 0:
                 print("Dommage, vous avez perdu l'épreuve finale. Le bon code était", mot_code)
 
-salle_De_Tresor()
+"""salle_De_Tresor()"""

@@ -61,5 +61,5 @@ def epreuve_hasard():
     epreuve = choice(epreuves) #la variable epreuve va prendre aléatoirement un des jeux
     return epreuve
 
-jeu=epreuve_hasard()
-jeu()
+"""jeu=epreuve_hasard()
+jeu()"""
