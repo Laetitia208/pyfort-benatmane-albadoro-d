@@ -36,5 +36,7 @@ def enigme_pere_fouras():                 #Cette fonction organise l'épreuve de
             if nb_essais == 0:            #S'il n'a plus d'essais,
                 print("Dommage, vous avez échoué à cette épreuve. La réponse était :",rep)
                 return False              #Il a perdu est la boucle se ferme, la fonction retourne False
-
+def epreuve_pere_fouras():
+    epreuve = enigme_pere_fouras
+    return epreuve
 """enigme_pere_fouras()"""

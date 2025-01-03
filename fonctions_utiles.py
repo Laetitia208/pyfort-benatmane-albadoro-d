@@ -38,8 +38,16 @@ def composer_equipe():
         if elt['leader'] == "oui":
             nombre_leader = nombre_leader + 1 #On compte si il y a un leader
     if nombre_leader == 0:
-        print("Il n'y a eu aucun leader choisi. Le joueur 1 est choisi comme leader de l'équipe ! ")
+        print("\nIl n'y a eu aucun leader choisi. Le joueur 1 est choisi comme leader de l'équipe ! ")
         equipe[0]['leader'] = "oui" #On attribue le rôle de leader au joueur 1
+    if nombre_leader > 1: #Si il y a plus de un leader dans l'équipe alors on choisi le joueur 1 comme l'unique leader de l'équipe
+        print("\nIl y a plus d'un leader dans l'équipe, le joueur 1 est choisi comme l'unique leader de l'équipe.")
+        equipe[0]['leader'] = "oui"  # On attribue le rôle de leader au joueur 1
+        if len(equipe) == 2: #On regarde combien il y a de joueur dans l'équipe, si il y en a 2 alors le joueur 2 n'est plus leader et si il y a 3 joueurs, les joueurs 2 et 3 ne sont plus leaders
+            equipe[1]['leader'] = "non"
+        if len(equipe) == 3:
+            equipe[1]['leader'] = "non"
+            equipe[2]['leader'] = "non"
 
     return equipe
 
@@ -51,17 +59,19 @@ def menu_epreuves():
     if choix == 1:
         return epreuve_math()
     if choix == 2:
-        return jeu_bataille_navale()
+        return epreuve_logique()
     if choix == 3:
         return epreuve_hasard()
     if choix == 4:
-        return enigme_pere_fouras()
+        return epreuve_pere_fouras()
 
 def choisir_joueur(equipe):
-    for i in range(len(equipe)):
+    for i in range(len(equipe)): #On affiche les joueurs qui composent l'équipe de haut en bas avec un chiffre devant leur profil
         if equipe[i]['leader'] == "oui":
             print(i+1,". ",equipe[i]['nom']," (",equipe[i]['profession'],") - Leader")
         else:
             print(i+1, ". ", equipe[i]['nom'], " (", equipe[i]['profession'], ") - Membre")
     numero_joueur = int(input("Entrez le numéro du joueur : ")) - 1 #On soustrait de 1 car les indices démarrent à 0 et non à 1
     return equipe[numero_joueur]
+
+

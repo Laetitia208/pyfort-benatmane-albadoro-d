@@ -152,5 +152,7 @@ def jeu_bataille_navale():                       #Cette fonction effectue le dé
             fini = True
             return False                         #Alors le maître du jeu a gagné et on sort de la boucle while
 
-
+def epreuve_logique():
+    epreuve = jeu_bataille_navale
+    return epreuve
 """jeu_bataille_navale()"""

@@ -1,9 +1,8 @@
 #Fort Boyard Simulator
 #Laetitia BENATMANE, Nicolas ALBADORO
 #Ce fichier comporte les épreuves de hasard et permet d'en lancer une
-
 from random import*
-
+import time
 def bonneteau():
     Liste = ['A','B','C'] #on définit une liste contenant les noms de chaque bonneteau
     nombre_tentative = 2 #on définit le nombre de tentative à 2 car il y a 2 tentatives
@@ -20,42 +19,56 @@ def bonneteau():
             Choix = chr(ord(Choix)-32) #Si le choix donné par le joueur est en minuscule alors on le convertit en majuscule
         if Choix in 'ABC':
             if Choix == BonneLettre: #Si le choix donné par le joueur est le bon alors la fonction renvoie vrai
+                time.sleep(0.5)
                 print("Bravo ! Vous avez trouvé la clé !")
                 return True
             else:
+                time.sleep(0.5)
                 print("Vous n'avez pas trouvé la clé !")
             nombre_tentative = nombre_tentative - 1 #On enlève 1 aux nombres de tentatives restantes
         else:
+            time.sleep(0.5)
             print("Le choix n'est pas valide")
+    time.sleep(0.5)
     print("Vous avez perdu ! \nLa clé se trouvait sous le bonneteau :",BonneLettre)
     return False
 
 def jeu_lance_des():
     print("Bienvenue sur le jeu des lancés de dés !\nLe maître du jeu et vous devez lancer deux dés, le premier qui obtient un 6 gagne, cependant vous avez 3 essais.")
     nombre_essai = 3 #On initalise le nombre d'essai restant à 3
+    time.sleep(1)
     while nombre_essai > 0: #On répète tant qu'il reste des essais
         print("Il vous reste :",nombre_essai,"essais !")
+        time.sleep(0.5)
         input("Pour lancer les dés, veuillez appuyer sur la touche **Entrée** !")
         a = randint(1,6) #la variable "a" va prendre une valeur entre 1 et 6 de façon aléatoire
         b = randint(1,6) #la variable "b" va prendre une valeur entre 1 et 6 de façon aléatoire
         des_joueur = (a,b) #on remplit le tuple des_joueur avec les valeurs de "a" et "b"
+        time.sleep(1)
         print("Vous avez obtenus les valeurs : ",des_joueur)
         if des_joueur[0] == 6 or des_joueur[1] == 6: #On vérifie si il y a un 6 dans le tuple des_joueur
+            time.sleep(0.5)
             print("Vous avez gagné ! \nVous remportez la clé !")
             return True
         else:
-            print("C'est au tour du maître du jeu !")
+            print("\nVous n'avez pas obtenu de 6")
+            time.sleep(2)
+            print("\nC'est au tour du maître du jeu !")
         c = randint(1,6) #la variable "c" va prendre une valeur entre 1 et 6 de façon aléatoire
         d = randint(1,6) #la variable "d" va prendre une valeur entre 1 et 6 de façon aléatoire
         des_maitre = (c,d)
+        time.sleep(1)
         print("Les résultats des dés obtenus par le maître du jeu sont : ",des_maitre)
         if des_maitre[0] == 6 or des_maitre[1] == 6: #On vérifie si il y a un 6 dans le tuple des_maitre
+            time.sleep(0.5)
             print("Vous avez perdu !\nLe maître du jeu a gagné")
             return False
         else:
             if nombre_essai > 1: #Si il reste un essai alors on annonce qu'il y a une nouvelle tentative après sinon on annonce que c'est la fin du jeu
+                time.sleep(1)
                 print("Aucun 6 n'a été obtenu, on passe au prochain essai")
             else:
+                time.sleep(1)
                 print("Personne n'a eu de 6 sur les 3 essais, c'est un match nul !")
                 return False
         nombre_essai = nombre_essai - 1 #On enlève un essai au nombre d'essai restant
