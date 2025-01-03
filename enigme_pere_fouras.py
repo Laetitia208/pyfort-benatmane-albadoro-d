@@ -20,7 +20,7 @@ def enigme_pere_fouras():                 #Cette fonction organise l'épreuve de
     enigme_choisie,rep = random.choice(list(liste_enigmes.items())) #Une énigme et sa réponse sont choisies au hasard
     print("Bienvenue dans l'énigme du Père Fouras. Déchiffrez cette énigme pour gagner cette épreuve et obtenir une clé.")
     print("Vous avez le droit à 3 essais. Si vous ne trouvez pas la réponse au bout de ces 3 essais, vous perdez.")
-    print("Bonne chance à vous")
+    print("Bonne chance à vous !")
     print("")
     print(enigme_choisie)
     while nb_essais > 0:                  #Tant que le joueur a au moins 1 essai,
