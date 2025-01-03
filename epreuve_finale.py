@@ -19,11 +19,16 @@ def salle_De_Tresor():                   #Cette fonction effectue le déroulemen
     emission = random.choice(emission)   #Et une émission est choisie au hasard
     indices = jeu_tv["Fort Boyard"][annee][emission]["Indices"]  #Les indices de l'émission de l'année choisie sont extraits
     mot_code = jeu_tv["Fort Boyard"][annee][emission]["MOT-CODE"]  #Ainsi que le mot_code
+    print("Bienvenue dans la salle de trésors. Pour gagner cette épreuve, trouvez le mot clé à l'aide des indices donnés.")
+    print("Vous aurez 3 essais possibles. Lorsque vous vous trompez, un indice de plus vous sera donné.")
+    print("Bonne chance à vous !")
+    print("")
     print("Voici les trois premiers indices :", indices[0],",",indices[1],",",indices[2]) #Les trois premiers indices d'affichent
     essais = 3                           #Le joueur possède 3 essais pour trouver la bonne réponse
     reponse_correcte = False
     i = 2
     while essais > 0 and reponse_correcte == False: #Tant que le joueur n'a pas gagné et qu'il possède au moins 1 essai,
+        print("")
         print("Saisissez une réponse :")
         reponse = input()                #Le joueur saisi une réponse
         reponse_min = reponse.lower()    #Sa réponse est mise en minuscule
