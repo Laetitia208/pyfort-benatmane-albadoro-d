@@ -1,36 +1,36 @@
 import json
 
-def charger_enigmes():
+def charger_enigmes():                    #Cette fonction permet d'extraire toutes les énigmes aisin que leur réponse du fichier enigmesPF.json
     with open('./data/enigmesPF.json','r',encoding='utf-8') as f:
-        enigmes = json.load(f)
+        enigmes = json.load(f)            #Le fichier est ouvert est chargé
     d = {}
-    for enigme in enigmes:
-        d[enigme['question']] = enigme['reponse']
+    for enigme in enigmes:                #Tout le fichier enigmes est parcouru
+        d[enigme['question']] = enigme['reponse']  #Et on en extrait les questions et les réponses et on les place dans le dico d
     return d
 
 import random
 
-def enigme_pere_fouras():
-    nb_essais = 3
-    liste_enigmes = (charger_enigmes())
-    enigme_choisie,rep = random.choice(list(liste_enigmes.items()))
+def enigme_pere_fouras():                 #Cette fonction organise l'épreuve de l'énigme du père fouras
+    nb_essais = 3                         #Le joueur a 3 essais
+    liste_enigmes = (charger_enigmes())   #Toutes les énigmes sont placées dans liste_enigmes grâce à la fonction charger_enigmes()
+    enigme_choisie,rep = random.choice(list(liste_enigmes.items())) #Une énigme et sa réponse sont choisies au hasard
     print(enigme_choisie)
-    while nb_essais > 0:
+    while nb_essais > 0:                  #Tant que le joueur a au moins 1 essai,
         print("Saisissez une réponse :")
-        reponse = input()
-        reponse_min = reponse.lower()
-        rep_min = rep.lower()
+        reponse = input()                 #Le joueur saisi une réponse
+        reponse_min = reponse.lower()     #La réponse du joueur est mise en minuscule
+        rep_min = rep.lower()             #La bonne réponse est mise en minuscule
         if reponse_min == rep or reponse == rep or reponse_min == rep_min or reponse == rep_min:
             print("Félicitation, votre réponse esr correcte ! Vous avez gagné une clé")
-            return True
+            return True                   #Si la réponse du joueur est correcte, alors il a gagné et la boucle s'arrête, la fonction retourne True
         else:
-            nb_essais -= 1
+            nb_essais -= 1                #Si c'est faux, le joueur perd un essai
             if nb_essais > 1:
                 print("Malheureusement, votre réponse est incorrecte. Il vous reste",nb_essais,"essais.")
             if nb_essais == 1:
                 print("Malheureusement, votre réponse est incorrecte. Il vous reste", nb_essais, "essai.")
-            if nb_essais == 0:
+            if nb_essais == 0:            #S'il n'a plus d'essais,
                 print("Dommage, vous avez échoué à cette épreuve. La réponse était :",rep)
-                return False
+                return False              #Il a perdu est la boucle se ferme, la fonction retourne False
 
 """enigme_pere_fouras()"""
