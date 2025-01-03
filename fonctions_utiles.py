@@ -1,3 +1,7 @@
+#Fort Boyard Simulator
+#Laetitia BENATMANE, Nicolas ALBADORO
+#Ce fichier comporte toutes les fonctions qui participent au bon déroulement du jeu
+
 from enigme_pere_fouras import*
 from epreuves_hasard import*
 from epreuves_logiques import*

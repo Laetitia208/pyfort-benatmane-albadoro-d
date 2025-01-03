@@ -1,6 +1,10 @@
+#Fort Boyard Simulator
+#Laetitia BENATMANE, Nicolas ALBADORO
+#Ce fichier comporte l'épreuve de l'énigme du Père Fouras et permet de la lancer
+
 import json
 
-def charger_enigmes():                    #Cette fonction permet d'extraire toutes les énigmes aisin que leur réponse du fichier enigmesPF.json
+def charger_enigmes():                    #Cette fonction permet d'extraire toutes les énigmes ainsi que leur réponse du fichier enigmesPF.json et retourne un dictionnaire
     with open('./data/enigmesPF.json','r',encoding='utf-8') as f:
         enigmes = json.load(f)            #Le fichier est ouvert est chargé
     d = {}
@@ -10,7 +14,7 @@ def charger_enigmes():                    #Cette fonction permet d'extraire tout
 
 import random
 
-def enigme_pere_fouras():                 #Cette fonction organise l'épreuve de l'énigme du père fouras
+def enigme_pere_fouras():                 #Cette fonction organise l'épreuve de l'énigme du père fouras et retourne un booléen
     nb_essais = 3                         #Le joueur a 3 essais
     liste_enigmes = (charger_enigmes())   #Toutes les énigmes sont placées dans liste_enigmes grâce à la fonction charger_enigmes()
     enigme_choisie,rep = random.choice(list(liste_enigmes.items())) #Une énigme et sa réponse sont choisies au hasard

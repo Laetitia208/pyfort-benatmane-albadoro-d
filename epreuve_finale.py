@@ -1,3 +1,7 @@
+#Fort Boyard Simulator
+#Laetitia BENATMANE, Nicolas ALBADORO
+#Ce fichier comporte l'épreuve finale et permet de la lancer
+
 import json
 import random
 

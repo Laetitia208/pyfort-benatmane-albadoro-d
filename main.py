@@ -1,3 +1,7 @@
+#Fort Boyard Simulator
+#Laetitia BENATMANE, Nicolas ALBADORO
+#Ce fichier lance le jeu Fort Boyard Simulator
+
 from fonctions_utiles import*
 
 

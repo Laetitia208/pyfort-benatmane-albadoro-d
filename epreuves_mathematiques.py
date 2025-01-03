@@ -1,6 +1,8 @@
-from pydoc import importfile
+#Fort Boyard Simulator
+#Laetitia BENATMANE, Nicolas ALBADORO
+#Ce fichier comporte les épreuves mathématiques et permet d'en lancer une
 
-def factorielle(n):                                                   #Cette fonction calcule la factorielle du nombre n
+def factorielle(n):                                                   #Cette fonction calcule la factorielle du nombre n et retourne le résultat
     f = 1
     if n == 0:
         return 1                                                      #0! = 1
@@ -10,7 +12,7 @@ def factorielle(n):                                                   #Cette fon
 
 import random
 
-def epreuve_math_factorielle():                                       #Cette fonction est une épreuve pour trouver la factorielle d'un nombre entre 1 et 10
+def epreuve_math_factorielle():                                       #Cette fonction est une épreuve pour trouver la factorielle d'un nombre entre 1 et 10 et retourne un booléen
     n = random.randint(1, 10)
     print("Epreuve de Mathématiques : calculer la factorielle de", n)
     joueur = int(input())                                             #Le joueur saisi sa réponse
@@ -23,7 +25,7 @@ def epreuve_math_factorielle():                                       #Cette fon
         print("Dommage, mauvaise réponse.")
         return False                                                  #Sinon elle retourne False
 
-def est_premier(n):                                                   #Cette fonction  vérifie si un nombre n est premier
+def est_premier(n):                                                   #Cette fonction  vérifie si un nombre n est premier et retourne un booléen
     pr = True
     if n <= 1 :
         return False                                                  #Si n<=1, alors n n'est pas premier
@@ -32,7 +34,7 @@ def est_premier(n):                                                   #Cette fon
             pr = False
     return pr
 
-def premier_plus_proche(n):                                           #Cette fonction trouve le nombre premier sépérieur ou égal à n le plus proche
+def premier_plus_proche(n):                                           #Cette fonction trouve le nombre premier sépérieur ou égal à n le plus proche et retourne la réponse, un entier
     proche = False
     i = n
     while proche == False :
@@ -42,7 +44,7 @@ def premier_plus_proche(n):                                           #Cette fon
         else:
             i = i + 1                                                 #Sinon on ajoute 1 à i tant que i n'est pas premier
 
-def epreuve_math_premier():                                           #Cette fonction choisi un nombre n aléatoire et demande à l'utilisateur de trouver le nombre premier le plus proche
+def epreuve_math_premier():                                           #Cette fonction choisi un nombre n aléatoire et demande à l'utilisateur de trouver le nombre premier le plus proche, elle retourne un booléen
     n = random.randint(10, 20)
     print("Epreuve de Mathématiques : trouver le nombre premier supérieur ou égal le plus proche de", n)
     joueur = int(input())                                             #L'utilisateur saisi sa réponse
@@ -55,7 +57,7 @@ def epreuve_math_premier():                                           #Cette fon
         print("Dommage, mauvaise réponse.")
         return False
 
-def epreuve_roulette_mathematique():                                  #Cette fonction génère un calcul aléatoire et demande au joueur de trouver le résultat
+def epreuve_roulette_mathematique():                                  #Cette fonction génère un calcul aléatoire et demande au joueur de trouver le résultat, elle retourne un booléen
     nb1 = random.randint(1, 20)                                 #Cinq nombres sont choisis aléatoirement entre 1 et 20
     nb2 = random.randint(1, 20)
     nb3 = random.randint(1, 20)
@@ -87,7 +89,7 @@ def epreuve_roulette_mathematique():                                  #Cette fon
         print("Dommage, mauvaise réponse.")
         return False                                                  #Si c'est incorrecte, elle retourne False
 
-def epreuve_math():                                                   #Cette fonction choisi une épreuve au hasard parmi les précédentes
+def epreuve_math():                                                   #Cette fonction choisi une épreuve au hasard parmi les précédentes, elle retourne une fonction
     epreuves = (epreuve_math_factorielle, epreuve_math_premier, epreuve_roulette_mathematique)
     epreuve = random.choice(epreuves)
     return epreuve                                                    #Elle lance ensuite la fonction (l'épreuve) choisie

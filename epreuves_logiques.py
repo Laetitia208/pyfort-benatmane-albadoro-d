@@ -1,12 +1,15 @@
-#Bataille navale
+#Fort Boyard Simulator
+#Laetitia BENATMANE, Nicolas ALBADORO
+#Ce fichier comporte l'épreuve de logique, la Bataille Navale, et permet de la lancer
 
-def suiv(indice):                                #Cette fonction permet de passer la main au joueur suivant
+
+def suiv(indice):                                #Cette fonction permet de passer la main au joueur suivant, elle retourne 0 ou 1
     if indice == 0:                              #Si c'est le joueur 0 qui joue,
         return 1                                 #C'est au tour du joueur 1
     if indice == 1:                              #Si c'est le joueur 1 qui joue,
         return 0                                 #C'est au tour du joueur 0
 
-def grille_vide():                               #Cette fonction crée un tableau 2D 3x3 remplie avec des espaces " "
+def grille_vide():                               #Cette fonction crée un tableau 2D 3x3 remplie avec des espaces " " et le retourne
     grille = [[" "," "," "],[" "," "," "],[" "," "," "]]
     return grille
 
@@ -22,7 +25,7 @@ def affiche_grille(grille,message):              #Cette fonction prend en param�
 
 import re
 
-def demande_position():                          #Cette fonction demande une position valide dans la grille au joueur
+def demande_position():                          #Cette fonction demande une position valide dans la grille au joueur et retourne un tuple de deux entiers
     print("Saisissez une position (ligne,colonne) entre 1 et 3 :")
     pos = str(input())
     nombres = re.findall(r'\d+', pos)    #Le module re va permettre de trouver les nombres entiers présents dans la saisie du joueur
@@ -45,7 +48,7 @@ def demande_position():                          #Cette fonction demande une pos
             nombres = re.findall(r'\d+', pos)
             entiers = [int(nombre) for nombre in nombres]
 
-def init():                                      #Cette fonction initialise la grille de jeu du joueur
+def init():                                      #Cette fonction initialise la grille de jeu du joueur et retourne un tableau 2D
     grille = grille_vide()                       #Elle crée une grille vide
     print("Positionnez vos bateaux :")
     for i in range(2):                           #Elle va ensuite demander au joueur de placer deux bateaux
@@ -61,7 +64,7 @@ def init():                                      #Cette fonction initialise la g
 import random
 import time
 
-def tour(joueur, grille_tirs_joueur, grille_adversaire): #Cette fonction permet d'organiser un tour de jeu
+def tour(joueur, grille_tirs_joueur, grille_adversaire): #Cette fonction permet d'organiser un tour de jeu et prend en paramètre le numéro du joueur, sa grille de tirs et la grille de l'adversaire
     if joueur == 1 :                             #Si c'est le tour du joueur 1, c'est-à-dire au maître du jeu,
         time.sleep(1.5)
         print("C'est le tour du maître du jeu :")
@@ -98,7 +101,7 @@ def tour(joueur, grille_tirs_joueur, grille_adversaire): #Cette fonction permet 
             time.sleep(1)
             print("Touché coulé !")
 
-def gagne(grille_tirs_joueur):                   #Cette fonction retourne si une grille de tirs est gagnante ou pas
+def gagne(grille_tirs_joueur):                   #Cette fonction retourne un booléen en fonction de si la grille de tirs prise en paramètre est gagnante ou pas
     bateaux_touches = 0                          #Le nombre de bateaux touchés est initialisé à 0
     tous_touches = False
     for ligne in grille_tirs_joueur:             #La fonction parcours toutes les cases de la grille prise en paramètre
@@ -109,7 +112,7 @@ def gagne(grille_tirs_joueur):                   #Cette fonction retourne si une
         tous_touches = True                      #Alors le joueur a gagné
     return tous_touches                          #Sinon il n'a pas encore gagné
 
-def init_grille_maitre():                        #Cette fonction initialise la grille de jeu du maître du jeu
+def init_grille_maitre():                        #Cette fonction initialise la grille de jeu du maître du jeu et retourne un tableau 2D
     grille_maitre = grille_vide()                #Elle crée une grille vide
     for i in range(2):                           #Et va ensuite placer deux bateaux
         libre = False
@@ -121,7 +124,7 @@ def init_grille_maitre():                        #Cette fonction initialise la g
                 libre = True                     #Et la boucle se ferme
     return grille_maitre
 
-def jeu_bataille_navale():                       #Cette fonction effectue le déroulement du jeu de la bataille navale
+def jeu_bataille_navale():                       #Cette fonction effectue le déroulement du jeu de la bataille navale et retourne un booléen
     print("Ce jeu se nomme 'La Bataille Navale'. Pour jouer, chaque joueur doit placer 2 bateaux sur une grille 3x3.")
     print("Les bateaux sont représentés par 'B' et les tirs manqués par '.'. Les bateaux coulés sont marqués par 'x'.")
     print("")

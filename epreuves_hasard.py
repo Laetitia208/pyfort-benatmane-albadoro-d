@@ -1,3 +1,7 @@
+#Fort Boyard Simulator
+#Laetitia BENATMANE, Nicolas ALBADORO
+#Ce fichier comporte les épreuves de hasard et permet d'en lancer une
+
 from random import*
 
 def bonneteau():
