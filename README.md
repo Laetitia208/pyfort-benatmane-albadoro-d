@@ -52,4 +52,8 @@
    27) menu_epreuves() / Propose les types d'épreuves disponibles et le joueur en choisi un. Une épreuve sera choisie au hasard parmi le type choisi. Par exemple, le type choisi est l'épreuve mathématique et la roulette mathématique est l'épreuve choisie aléatoirement
    28) choisir_joueur(equipe) / Un joueur parmi l'équipe est choisi pour faire l'épreuve
    29) jeu() / Lance le jeu Fort Boyard Simulator
-   - **Gestion des Entrées et Erreurs** : 
+   - **Gestion des Entrées et Erreurs** : pour gérer les intervalles, il y a une saisie sécurisée afin de ne pas avoir d'erreur dans le programme. Les bugs les plus rencontrés sont "TypeError: 'NoneType' object is not subscriptable", "KeyError" et "AttributeError: 'str' object has no attribute 'append'"
+
+## **3. Journal de bord**
+
+   - **Chronologie du Projet** :
