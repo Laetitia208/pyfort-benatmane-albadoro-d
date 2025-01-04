@@ -26,7 +26,7 @@ def affiche_grille(grille,message):              #Cette fonction prend en param�
 def demande_position():                          #Cette fonction demande une position valide dans la grille au joueur et retourne un tuple de deux entiers
     print("Saisissez une position (ligne,colonne) entre 1 et 3 :")
     pos = str(input())
-    nombres = pos.split(",")                     #La fcontion split va permettre de séparer tous les nombres entre des virgules
+    nombres = pos.split(",")                     #La fonction split va permettre de séparer tous les nombres entre des virgules
     entiers = [int(nombre) for nombre in nombres]#Ces nombres sont ensuite placés dans la liste entiers
     correct = False
     while correct == False:                      #Cette boucle permet d'effectuer une saisie sécurisée afin d'obtenir une saisie sous la forme de deux entiers compris entre 1 et 3

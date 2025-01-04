@@ -25,9 +25,11 @@ def jeu():
     print("\nVous passez à l'épreuve finale")
     time.sleep(1.5)
     salle_De_Tresor() #lance l'épreuve finale
+    time.sleep(2)
+    print("Statistique des joueurs")
+    time.sleep(1)
+    for i in range(len(equipe)):
+        print(equipe[i]["nom"], "a remporté", equipe[i]["cles_gagnees"], "clés")
 
 
-
-
-jeux = jeu()
-jeux()
+jeu()
