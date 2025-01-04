@@ -23,12 +23,10 @@ def affiche_grille(grille,message):              #Cette fonction prend en param�
         print(nvl_ligne)                         #Et ensuite, elles s'affichent une par une
     print(" -------------")
 
-import re
-
 def demande_position():                          #Cette fonction demande une position valide dans la grille au joueur et retourne un tuple de deux entiers
     print("Saisissez une position (ligne,colonne) entre 1 et 3 :")
     pos = str(input())
-    nombres = re.findall(r'\d+', pos)    #Le module re va permettre de trouver les nombres entiers présents dans la saisie du joueur
+    nombres = pos.split(",")                     #La fcontion split va permettre de séparer tous les nombres entre des virgules
     entiers = [int(nombre) for nombre in nombres]#Ces nombres sont ensuite placés dans la liste entiers
     correct = False
     while correct == False:                      #Cette boucle permet d'effectuer une saisie sécurisée afin d'obtenir une saisie sous la forme de deux entiers compris entre 1 et 3
@@ -40,12 +38,12 @@ def demande_position():                          #Cette fonction demande une pos
             else:
                 print("Saisissez une position (ligne,colonne) entre 1 et 3 :")
                 pos = str(input())               #Sinon, une saisie est redemandée au joueur
-                nombres = re.findall(r'\d+', pos)
+                nombres = pos.split(",")
                 entiers = [int(nombre) for nombre in nombres]
         else:
             print("Saisissez une position (ligne,colonne) entre 1 et 3 :")
             pos = str(input())                   #S'il y a plus de deux entiers, une saisie est redemandée
-            nombres = re.findall(r'\d+', pos)
+            nombres = pos.split(",")
             entiers = [int(nombre) for nombre in nombres]
 
 def init():                                      #Cette fonction initialise la grille de jeu du joueur et retourne un tableau 2D
@@ -72,7 +70,7 @@ def tour(joueur, grille_tirs_joueur, grille_adversaire): #Cette fonction permet 
         c = random.randint(1,3)
         time.sleep(1.5)
         print("Le maître du jeu tire en position",l,",",c)
-        if grille_adversaire[l - 1][c - 1] == "-": #Si la position l,c de la grille de l'adversaire est égale à "-", cela signifie que le joueur a déjà touché au moins une fois cette case
+        if grille_adversaire[l-1][c-1] == "-": #Si la position l,c de la grille de l'adversaire est égale à "-", cela signifie que le joueur a déjà touché au moins une fois cette case
             print("Le maître du jeu a touché le même bateau")
         if grille_adversaire[l-1][c-1] == " ":   #Si la position l,c de la grille de l'adversaire est égale à " ",
             grille_tirs_joueur[l-1][c-1] = "."   #Alors il n'y a pas de bateau à cet emplacement et on place un point "." sur la grille de tirs du joueur
