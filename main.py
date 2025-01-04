@@ -29,8 +29,7 @@ def jeu():
     print("Statistique des joueurs")
     time.sleep(1)
     for i in range(len(equipe)):
-        print(equipe[i]["nom"],"a remporté",equipe[i]["cles_gagnees"],"clés")
-
+        print(equipe[i]["nom"], "a remporté", equipe[i]["cles_gagnees"], "clés")
 
 
 jeu()
