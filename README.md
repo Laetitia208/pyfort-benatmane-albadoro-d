@@ -62,8 +62,8 @@
 
 ## **4. Tests et Validation**
    - **Stratégies de Test** : chacune des fonction est testée pour chaque cas possible
-   - test de ce que fait le programme si il y a plusieurs leader : ![image](https://github.com/user-attachments/assets/e300985a-ff38-4fe6-97d9-889a1ad7534b)
-   - test de ce que répond le programme lorsqu'on touche plusieurs fois le même bateau au jeu de la bataille navale : ![image](https://github.com/user-attachments/assets/45684de9-4506-4e69-9194-71c805d8f856)
-   - test de ce que fait le programme lorsqu'on choisit le même en placement lors du positionnement des bateaux au jeu de la bataille navale : ![image](https://github.com/user-attachments/assets/db171734-9f2f-493a-b4e9-86025275eccb)
+   - test de ce que fait le programme s'il y a plusieurs leader : ![image](https://github.com/user-attachments/assets/e300985a-ff38-4fe6-97d9-889a1ad7534b)
+   - test de ce que répond le programme lorsqu'on touche plusieurs fois le même bâteau au jeu de la bataille navale : ![image](https://github.com/user-attachments/assets/45684de9-4506-4e69-9194-71c805d8f856)
+   - test de ce que fait le programme lorsqu'on choisit le même en placement lors du positionnement des bâteaux au jeu de la bataille navale : ![image](https://github.com/user-attachments/assets/db171734-9f2f-493a-b4e9-86025275eccb)
 
 
