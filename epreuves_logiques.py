@@ -59,6 +59,8 @@ def init():                                      #Cette fonction initialise la g
             if grille[position[0]-1][position[1]-1] == " ":  #Si la position est libre dans la grille
                 grille[position[0]-1][position[1]-1] = "B"   #Alors un bateau "B" est placé
                 libre = True                     #Et la boucle se ferme
+            else:
+                print("\nVous avez déjà placé un bateau à cette postion de la grille.\nVeuillez recommencer !\n")
     return grille
 
 import random
