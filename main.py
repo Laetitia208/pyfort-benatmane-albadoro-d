@@ -30,3 +30,4 @@ def jeu():
 
 
 jeux = jeu()
+jeux()

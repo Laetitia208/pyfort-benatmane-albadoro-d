@@ -83,7 +83,7 @@ def tour(joueur, grille_tirs_joueur, grille_adversaire): #Cette fonction permet 
             print("Touché coulé !")
     if joueur == 0 :                             #Si c'est le tour du joueur 2, c'est-à-dire à l'utilisateur,
         time.sleep(1.5)
-        print("C'est à votre tour de faire feu ! :")
+        print("C'est à votre tour de faire feu !")
         time.sleep(1.5)
         print("Rappel de l'historique des tirs que vous avez effectués :")
         affiche_grille(grille_tirs_joueur,"") #La fonction affiche la grille de tirs déjà effectués du joueur
