@@ -56,4 +56,9 @@
 
 ## **3. Journal de bord**
 
-   - **Chronologie du Projet** :
+   - **Chronologie du Projet** : début du projet le 05/12/2014. Épreuves mathépatiques et hasard terminés le 19/12/2024 et début épreuve logique. Fonctions utiles terminées le 02/01/2025. Épreuve logique, énigme père fouras et épreuve finale terminées le 03/01/2025.
+   Nicolas ALBADORO a travaillé sur les épreuves de hasard, les fonctions utiles et le fichier main.
+   Laetitia BENATMANE a travaillé sur les épreuves mathématiques, l'épreuve de logique, les énigmes du Père Fouras et l'épreuve finale.
+
+## **4. Tests et Validation**
+   - **Stratégies de Test** : chacune des fonction est testée pour chaque cas possible
